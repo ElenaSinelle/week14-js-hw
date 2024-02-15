@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'Bellota';
+  src: url('../assets/fonts/BellotaText-Regular.ttf');
+  src: url('../assets/fonts/BellotaText-Regular.eot') format('embedded-opentype'),
+      url('../assets/fonts/BellotaText-Regular.woff2') format('woff2'),
+      url('../assets/fonts/BellotaText-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$bg-color: rgb(25, 53, 79);
+$text-color:  rgb(201, 232, 242);
+$text-color-bright:  rgb(39, 194, 246);
+$padding: 2rem;
+$transition: all ease 0.5s;
+
+@mixin flex-column($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+body {
+  background-color: $bg-color;
+  font: normal normal 16px/20px Bellota, sans-serif;
+  color: $text-color;
+}
+
+.grade {
+  margin: 0 auto;
+  max-width: 60vw;
+  background-color: $bg-color;
+  padding: $padding * 2;
+
+  &__title {
+    padding-bottom: $padding * 1.2;
+    text-align: center;
+  }
+
+  &__container {
+    @include flex-column($padding);
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    &-span {
+      font-weight: bolder;
+      color: $text-color-bright;
+    }
+  }
+
+  &__button {
+    width: 50%;
+    align-self: center;
+    outline: none;
+    border: 1px solid $text-color-bright;
+    background-color: $text-color-bright;
+    padding: $padding * 0.25;
+    border-radius: 0.2rem;
+    box-shadow:  0 0 0.5rem 0.05rem rgba( $text-color-bright, 0.8);
+    cursor: pointer;
+    color: $bg-color;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    transition: $transition;
+
+    &:hover {
+      border: 1px solid $text-color-bright;
+      background-color: $bg-color;
+      color: $text-color;
+    }
+
+    &:active {
+      border: 1px solid $text-color-bright;
+      background-color: $bg-color;
+      color: $text-color;
+      transform: scale(0.95);
+    }
+  }
+}

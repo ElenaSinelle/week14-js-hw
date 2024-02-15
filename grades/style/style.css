@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Bellota";
+  src: url("../assets/fonts/BellotaText-Regular.ttf");
+  src: url("../assets/fonts/BellotaText-Regular.eot") format("embedded-opentype"), url("../assets/fonts/BellotaText-Regular.woff2") format("woff2"), url("../assets/fonts/BellotaText-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: rgb(25, 53, 79);
+  font: normal normal 16px/20px Bellota, sans-serif;
+  color: rgb(201, 232, 242);
+}
+
+.grade {
+  margin: 0 auto;
+  max-width: 60vw;
+  background-color: rgb(25, 53, 79);
+  padding: 4rem;
+}
+.grade__title {
+  padding-bottom: 2.4rem;
+  text-align: center;
+}
+.grade__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.grade__container p {
+  font-size: 1.5rem;
+}
+.grade__container-span {
+  font-weight: bolder;
+  color: rgb(39, 194, 246);
+}
+.grade__button {
+  width: 50%;
+  align-self: center;
+  outline: none;
+  border: 1px solid rgb(39, 194, 246);
+  background-color: rgb(39, 194, 246);
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0.5rem 0.05rem rgba(39, 194, 246, 0.8);
+  cursor: pointer;
+  color: rgb(25, 53, 79);
+  font-size: 1.5rem;
+  font-weight: bolder;
+  transition: all ease 0.5s;
+}
+.grade__button:hover {
+  border: 1px solid rgb(39, 194, 246);
+  background-color: rgb(25, 53, 79);
+  color: rgb(201, 232, 242);
+}
+.grade__button:active {
+  border: 1px solid rgb(39, 194, 246);
+  background-color: rgb(25, 53, 79);
+  color: rgb(201, 232, 242);
+  transform: scale(0.95);
+}
