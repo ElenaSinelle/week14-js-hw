@@ -24,8 +24,13 @@ function close() {
   popup.classList.remove('visible');
 }
 
-buttons.addEventListener('click', function(event) {
+function createBestFilms() {
+  const films = directors.map(item => item.topRatedFilm);
+  filmsContents.textContent = films.join(', ');
+}
 
+// event listeners
+buttons.addEventListener('click', function(event) {
   let director = event.target.closest('.directors__director');
   if(!director) return;
   let directorName = director.querySelector('.director').textContent;
@@ -40,10 +45,5 @@ buttons.addEventListener('click', function(event) {
   closeIcon.addEventListener('click', close);
   fade.addEventListener('click', close);
 });
-
-function createBestFilms() {
-  const films = directors.map(item => item.topRatedFilm);
-  filmsContents.textContent = films.join(', ');
-}
 
 filmsButton.addEventListener('click', createBestFilms);
