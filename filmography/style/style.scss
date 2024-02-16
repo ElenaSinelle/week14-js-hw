@@ -56,6 +56,7 @@ body {
 }
 
 //section directors styles
+
 .directors {
   margin: 0 auto;
   min-height: 100vh;
@@ -90,18 +91,6 @@ body {
   }
 
   &__button {
-    // width: 15rem;
-    // outline: none;
-    // border: 1px solid $text-color-grey;
-    // background-color: $text-color-grey;
-    // padding: $padding * 0.25;
-    // border-radius: 0.2rem;
-    // box-shadow:  0 0 0.5rem 0.05rem rgba( $text-color-grey, 0.8);
-    // cursor: pointer;
-    // color: $bg-color;
-    // font-size: 1.5rem;
-    // font-weight: bolder;
-    // transition: $transition;
     @include button;
 
     &:hover {
@@ -143,6 +132,7 @@ body {
 }
 
 //popup styles
+
 .popup {
   position: absolute;
   width: $dimension;
