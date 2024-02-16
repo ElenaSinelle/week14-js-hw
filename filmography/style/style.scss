@@ -1,0 +1,213 @@
+@font-face {
+  font-family: 'SS';
+  src: url('../assets/fonts/sourcesansprolight.ttf');
+  src: url('../assets/fonts/sourcesansprolight.eot') format('embedded-opentype'),
+       url('../assets/fonts/sourcesansprolight.woff') format('woff'),
+       url('../assets/fonts/sourcesansprolight.woff2') format('woff2');
+       font-weight: 400;
+       font-style: normal;
+}
+
+//general styles, variables, mixins
+
+$bg-color: rgb(24, 25, 26);
+$text-color:  rgb(206, 209, 210);
+$text-color-grey:  rgb(147, 171, 179);
+$padding: 2rem;
+$dimension: 35%;
+$transition: all ease 0.5s;
+
+@mixin button {
+  width: 15rem;
+  outline: none;
+  border: 1px solid $text-color-grey;
+  background-color: $text-color-grey;
+  padding: $padding * 0.25;
+  border-radius: 0.2rem;
+  box-shadow:  0 0 0.5rem 0.05rem rgba( $text-color-grey, 0.8);
+  cursor: pointer;
+  color: $bg-color;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  transition: $transition;
+}
+
+@mixin hover {
+  border: 1px solid $text-color-grey;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+@mixin active {
+  border: 1px solid $text-color-grey;
+  background-color: $bg-color;
+  color: $text-color;
+  transform: scale(0.95);
+}
+
+@function position($n) {
+  @return 50% - $n * 0.5;
+}
+
+
+body {
+  font: normal normal 20px/24px 'SS', sans-serif;
+  color: $text-color;
+}
+
+//section directors styles
+.directors {
+  margin: 0 auto;
+  min-height: 100vh;
+  background-image: url('../assets/img/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: $padding * 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: $padding * 2;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    &-col1,
+    &-col2 {
+      display: grid;
+      grid-auto-rows: 8rem;
+    }
+  }
+
+  &__director {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__button {
+    // width: 15rem;
+    // outline: none;
+    // border: 1px solid $text-color-grey;
+    // background-color: $text-color-grey;
+    // padding: $padding * 0.25;
+    // border-radius: 0.2rem;
+    // box-shadow:  0 0 0.5rem 0.05rem rgba( $text-color-grey, 0.8);
+    // cursor: pointer;
+    // color: $bg-color;
+    // font-size: 1.5rem;
+    // font-weight: bolder;
+    // transition: $transition;
+    @include button;
+
+    &:hover {
+      @include hover;
+    }
+
+    &:active {
+      @include active;
+    }
+  }
+
+  &__best-films {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+
+    &-button {
+      @include button;
+      width: fit-content;
+      padding: $padding * 0.5;
+
+      &:hover {
+        @include hover;
+      }
+
+      &:active {
+        @include active;
+      }
+    }
+  }
+
+  &__films {
+    font-weight: 800;
+  }
+}
+
+//popup styles
+.popup {
+  position: absolute;
+  width: $dimension;
+  height: $dimension;
+  left: position($dimension);
+  top: position($dimension);
+  padding: $padding;
+  background-color: $text-color-grey;
+  border-radius: 0.2rem;
+  border: 1px solid rgba( $bg-color, 0.3);
+  box-shadow:  0 0 0.5rem 0.05rem rgba( $text-color-grey, 0.8);
+  color: $bg-color;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: $padding * 0.4;
+  transition: $transition;
+  transform: scale(0);
+
+  &.visible {
+    transition: $transition;
+    transform: scale(1);
+  }
+
+  &__button {
+    color: $bg-color;
+    font-weight: 600;
+    cursor: pointer;
+    width: fit-content;
+    outline: none;
+    border: 1px solid rgba( $bg-color, 0.3);
+    background-color: rgba( $bg-color, 0.3);
+    padding: $padding * 0.25;
+    border-radius: 0.2rem;
+    box-shadow:  0 0 0.5rem 0.05rem rgba( $text-color-grey, 0.8);
+    color: $text-color;
+    transition: $transition;
+
+    &:hover {
+      @include hover;
+    }
+
+    &:active {
+      @include active;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: $padding;
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover,
+    &:active {
+      transform: rotate(270deg);
+    }
+  }
+}
+
+.fade.active {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba( $text-color-grey, 0.5);
+}

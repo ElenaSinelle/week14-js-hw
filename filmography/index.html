@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Top Film Directors</title>
+		<link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="assets/img/favicon.svg" type="image/svg">
+	</head>
+	<body>
+    <div class="fade"></div>
+    <section class="directors">
+      <h1 class="directors__title">Выдающиеся режиссёры</h1>
+      <div class="directors__container">
+        <div class="directors__container-col1">
+          <div class="directors__director" id="stevenSpielberg">
+            <p class="director">Стивен Спилберг</p>
+            <button class="directors__button">Подробнее</button>
+          </div>
+
+          <div class="directors__director" id="christopherNolan">
+            <p class="director">Кристофер Нолан</p>
+            <button class="directors__button">Подробнее</button>
+          </div>
+
+          <div class="directors__director" id="martinMcDonagh">
+            <p class="director">Мартин МакДона</p>
+            <button class="directors__button">Подробнее</button>
+          </div>
+        </div>
+
+        <div class="directors__container-col2">
+          <div class="directors__director" id="alexeyBalabanov">
+            <button class="directors__button">Подробнее</button>
+            <p class="director">Алексей Балабанов</p>
+          </div>
+
+          <div class="directors__director" id="peterFarrelly">
+            <button class="directors__button">Подробнее</button>
+            <p class="director">Питер Фаррелли</p>
+          </div>
+
+          <div class="directors__director" id="jeanMarcVallee">
+            <button class="directors__button">Подробнее</button>
+            <p class="director">Жан-Марк Валле</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="directors__best-films">
+        <button class="directors__best-films-button">Лучшие фильмы режиссёров</button>
+        <div class="directors__best-films-list"></div>
+      </div>
+
+      <div class="popup">
+        <img class="popup__close" src="assets/img/close-icon.svg" alt="закрыть">
+        <p>Режиссёр: <span class="name"></span></p>
+        <p>Деятельность: <span class="career"></span></p>
+        <p>Лучший фильм: <span class="topRatedFilm"></span></p>
+        <a href="" class="popup__button filmography" target="_blank">Посмотреть фильмографию</a>
+      </div>
+    </section>
+
+    <script type="module" src="script.js"></script>
+	</body>
+</html>
